@@ -9,7 +9,8 @@ import { User } from '../../user/user';
 export class UsersComponent implements OnInit {
 
   @Input() users: User[] = [];
-  
+  rows: any[] = [];
+
   constructor() { }
 
   ngOnInit() {
