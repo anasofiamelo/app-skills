@@ -1,17 +1,1 @@
-
-<table>
-  <thead>
-    <tr>
-      <th>Users</th>
-      <th>Nome</th>
-      <th>Email</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users">
-      <td><p-user [nomes]="user.nome"></p-user></td>
-      <td><p-user [users]="user.user"></p-user></td>
-      <td><p-user [emails]="user.email"></p-user></td>
-    </tr>
-  </tbody>
-</table>
+<app-users [users]="users"></app-users>
