@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { UserService } from '../user/user.service';
@@ -12,6 +12,8 @@ import { User } from '../user/user';
 export class UserListComponent implements OnInit {
 
   users: User[] = [];
+  filter: string = '';
+
 
   constructor(
     private userService: UserService,

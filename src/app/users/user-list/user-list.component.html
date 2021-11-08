@@ -1,1 +1,17 @@
-<app-users [users]="users"></app-users>
+<nav> <h4> Olá, {{usuario}} </h4> </nav>
+
+<div class="text-center mt-3 mb-3">
+    <form>
+        <input 
+        class="rounded" 
+        type="search" 
+        placeholder="search..."
+        autofocus
+        (keyup)="filter = $event.target.value">
+        <i aria-hidden="true" class="fa fa-search ml-1"></i>
+    </form>
+</div>
+
+{{ filter }}
+ 
+<app-users [users]="users | filterBySkills: filter"></app-users>

@@ -17,6 +17,6 @@ export class UserService {
 
     listFromUser(id: number){
 
-        return this.http.get<User[]>(`${API}/users/`)
+        return this.http.get<User[]>(`${API}/lista`)
     }
 }

@@ -6,13 +6,15 @@ import { UserComponent } from '../users/user/user.component';
 import { UserListComponent } from '../users/user-list/user-list.component';
 import { FormComponent } from '../users/form/form.component';
 import { UsersComponent } from './user-list/users/users.component';
+import { FilterBySkill } from './user-list/filter-by-skill.pipe';
 
 @NgModule({
     declarations: [ 
         UserComponent, 
         UserListComponent,
         FormComponent,
-        UsersComponent 
+        UsersComponent,
+        FilterBySkill
     ],
     imports: [ 
         HttpClientModule,

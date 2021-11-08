@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { UsersModule } from './users/users.module';
 import { AppRoutingModule } from './app.routing.module';
 import { ErrorsModule } from './errors/errors.module';
+import { HomeModule } from './home/home.module';
 
 
 
@@ -16,7 +17,8 @@ import { ErrorsModule } from './errors/errors.module';
     BrowserModule,
     UsersModule,
     AppRoutingModule,
-    ErrorsModule
+    ErrorsModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
