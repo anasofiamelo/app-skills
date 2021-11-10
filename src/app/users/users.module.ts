@@ -7,6 +7,7 @@ import { UserListComponent } from '../users/user-list/user-list.component';
 import { FormComponent } from '../users/form/form.component';
 import { UsersComponent } from './user-list/users/users.component';
 import { FilterBySkill } from './user-list/filter-by-skill.pipe';
+import { CardComponent } from '../shared/components/card/card.component';
 
 @NgModule({
     declarations: [ 

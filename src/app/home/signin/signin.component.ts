@@ -8,7 +8,8 @@ import { PlatformDetectorService } from "src/app/core/platform-detector/platform
 
 
 @Component({
-    templateUrl: './signin.component.html'
+    templateUrl: './signin.component.html',
+    styleUrls: ['./signin.component.css']
 })
 
 export class SignInComponent implements OnInit {
@@ -38,7 +39,7 @@ export class SignInComponent implements OnInit {
 
         this.authService
         .authenticate(user, password)
-        .subscribe(() => this.router.navigateByUrl('users'),
+        .subscribe(() => this.router.navigateByUrl('/lista'),
             err => { 
                 console.log(err.message)
                 this.loginForm.reset()

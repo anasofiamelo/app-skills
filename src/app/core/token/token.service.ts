@@ -5,7 +5,7 @@ const KEY = 'authToken'
 @Injectable({  providedIn: 'root'})
 export class TokenService {
 
-    hadToken(){
+    hasToken(){
         return !!this.getToken();
     }
     setToken(token){

@@ -6,6 +6,8 @@ import { UsersModule } from './users/users.module';
 import { AppRoutingModule } from './app.routing.module';
 import { ErrorsModule } from './errors/errors.module';
 import { HomeModule } from './home/home.module';
+import { CoreModule } from './core/core.module';
+import { CardModule } from './shared/components/card/card.module';
 
 
 
@@ -18,7 +20,9 @@ import { HomeModule } from './home/home.module';
     UsersModule,
     AppRoutingModule,
     ErrorsModule,
-    HomeModule
+    HomeModule,
+    CoreModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

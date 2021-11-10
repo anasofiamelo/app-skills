@@ -9,6 +9,7 @@ import { UserComponent } from './users/user/user.component';
 const routes: Routes = [
     { path: '', component: SignInComponent},
     { path: 'users', component: UserListComponent },
+    { path: ':user', component: UserListComponent },
     { path: '**', component: UserListComponent }
 ]
 

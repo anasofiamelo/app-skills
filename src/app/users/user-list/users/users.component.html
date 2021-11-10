@@ -1,12 +1,13 @@
 <div class="content">
-  <div *ngFor="let user of users">
+  <div>
     <div class="card-user">
       <i></i>
-      <p><p-user [ids]="user.id"></p-user></p>
-      <p><p-user [users]="user.user"></p-user></p>
-      <p><p-user [nomes]="user.nome"></p-user></p>
-      <p><p-user [emails]="user.email"></p-user></p>
-      <p><p-user [senhas]="user.senha"></p-user></p>
+        <p-user 
+          *ngFor="let user of users"
+          [user]="user.user"
+          [nome]="user.nome"
+          [senha]="user.senha">
+        </p-user>
     </div>
   </div>
-</div>
+</div>    

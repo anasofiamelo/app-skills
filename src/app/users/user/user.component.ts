@@ -8,9 +8,7 @@ import { Component, Input } from "@angular/core";
 
 export class UserComponent {
 
-    @Input() ids =  '';
-    @Input() users =  '';
-    @Input() nomes =  '';
-    @Input() emails =  '';
-    @Input() senhas =  '';
+    @Input() user = '';
+    @Input() nome = '';
+    @Input() senha = '';
 }

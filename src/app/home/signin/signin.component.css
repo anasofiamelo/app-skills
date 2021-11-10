@@ -1,0 +1,32 @@
+.input {
+    border: none;
+    border-bottom: 2px solid #06d6a0;
+    width: 300px;
+}
+.btn {
+    width: 250px;
+    height: 50px;
+    background: #06d6a0;
+    color: white;
+    border-radius: 25px;
+}
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+}
+.form * {
+    margin-top: 10px;
+}
+h4 {
+    font-size: 40px;
+    color: #073b4c;
+}
+p {
+    color: #073b4c;
+}
+a {
+    border-bottom: 1px solid #073b4c;
+}

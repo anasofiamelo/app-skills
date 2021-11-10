@@ -13,7 +13,7 @@ export class UserListComponent implements OnInit {
 
   users: User[] = [];
   filter: string = '';
-
+  user: string = '';
 
   constructor(
     private userService: UserService,
@@ -22,8 +22,11 @@ export class UserListComponent implements OnInit {
   
   ngOnInit(): void {
 
-    const id = this.activatedRoute.snapshot.params.id
+    this.user = this.activatedRoute.snapshot.params.user
 
-    this.userService.listFromUser(id).subscribe(users => {this.users = users})
+    this.userService.listFromUser(this.user)
+      .subscribe(users => {
+      this.users = users})
+
   }
-}
+}      
