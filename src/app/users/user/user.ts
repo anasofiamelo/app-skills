@@ -7,6 +7,8 @@ export interface User {
     senha: string;
     email: string;
     admin: boolean;
+    profilePic: string,
+    profileDesc: string,
     createdAt: number;
     updatedAt: number;
 }

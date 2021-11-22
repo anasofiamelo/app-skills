@@ -9,7 +9,7 @@ export class TokenService {
         return !!this.getToken();
     }
     setToken(token){
-        window.localStorage.setItem(KEY , token)
+        window.localStorage.setItem(KEY, token)
     }
     getToken(){
         return window.localStorage.getItem(KEY)

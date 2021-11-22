@@ -1,0 +1,117 @@
+footer {
+    background: fff;
+    height: 100%;
+}
+.content {
+    height: 100%;
+    margin-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.nav {
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon {
+    position: relative;
+    transition: 0.2s;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+a {
+    display: flex;
+    align-items: center;
+    color: #ebf5fc;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.2s;
+}
+a span {
+    color: #293241;
+    font-size: 1.2rem;
+} 
+i {
+    margin-right: 0.3rem;
+    color: #293241;
+}
+.icon:hover i, .icon:hover a span {
+    color: #0FA3B1;
+}
+.footer span {
+    border-bottom: 2px solid #0FA3B1;
+    transition: 0.2s;
+}
+.footer span:hover {
+    border-bottom: 2px solid #ebf5fc;
+}
+.form-group {
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background: #ebf5fc;
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+                6px 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+.subtitle {
+    text-align: center;
+    color: #293241;
+}
+.input {
+    background: none;
+    border: none;
+    margin: 1rem;
+}
+.input:focus {
+    outline-width: 0;
+} 
+
+.user-name {
+    font-size: 25px;
+    color: #073b4c;
+    margin-right: 0.5rem;
+}
+.user {
+    height: 10%;
+    display: flex;
+}
+.user-img {
+    font-size: 1.65rem;
+    border-radius: 50%;
+    border: 2px solid #32a3b1;
+    width: 30px;
+    height: 30px;
+    margin-top: 1rem;
+}
+
+/* buttons */
+
+.btn {
+    width: 250px;
+    height: 55px;
+    background: #ebf5fc;
+    border-radius: 25px;
+    color: #32a3b1;
+    font-size: 1.5rem;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 11s;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+.btn:hover {
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+}

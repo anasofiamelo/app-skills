@@ -1,29 +1,30 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 
 import { UserComponent } from '../users/user/user.component';
-import { UserListComponent } from '../users/user-list/user-list.component';
-import { FormComponent } from '../users/form/form.component';
-import { UsersComponent } from './user-list/users/users.component';
-import { FilterBySkill } from './user-list/filter-by-skill.pipe';
-import { CardComponent } from '../shared/components/card/card.component';
+import { SkillsListComponent } from './skills-list/skills-list.component';
+
+
 
 @NgModule({
     declarations: [ 
         UserComponent, 
-        UserListComponent,
-        FormComponent,
-        UsersComponent,
-        FilterBySkill
+        SkillsListComponent
     ],
     imports: [ 
+        FormsModule,
+        ReactiveFormsModule,
         HttpClientModule,
-        CommonModule
+        CommonModule,
+        VMessageModule,
+        RouterModule
     ]
 
 })
 
-export class UsersModule {
-
-}
+export class UsersModule {} 

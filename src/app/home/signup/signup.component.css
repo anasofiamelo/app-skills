@@ -1,0 +1,75 @@
+h4, h2, p, label {
+    color: #293241;
+    text-align: center;
+    font-weight: 500;
+}
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+h4 {
+    font-size: 40px;
+}
+label {
+    display: none;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-group {
+    width: 450px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background: #ebf5fc;
+    margin: 1rem 0;
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+                6px 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;          
+    align-items: center;
+}
+.signin-container {
+    color: #293241;
+    font-size: 1.2rem;
+}
+.signin {
+    color: #32a3b1; 
+    text-decoration: none;
+    border: none;
+    text-align: center;
+}
+.input {
+    background: none;
+    border: none;
+    margin-left: 0.6rem;
+}
+.input:focus {
+    outline-width: 0;
+} 
+.btn {
+    width: 450px;
+    height: 55px;
+    background: #ebf5fc;
+    border-radius: 25px;
+    color: #32a3b1;
+    font-size: 1.5rem;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.btn:hover {
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.15);  
+}
+ i {
+     margin-left: 2rem;
+ }

@@ -1,0 +1,78 @@
+/* 32a3b1 */
+h4, p {
+    color: #fff;
+    text-align: center;
+    font-size: 1.3rem;
+}
+p {
+    font-size: 2rem;
+}
+.bg-top {
+    position: absolute;
+    z-index: 1;
+    left: 88rem;
+    top: -2rem;
+    background: #32a3b1;
+    padding: 1.27rem;
+    border-radius: 0% 0% 0% 45%;
+    transform: rotate(7deg);
+    height: 600px;
+    width: 600px;
+}
+.bg-bottom {
+    border-radius: 40% 0% 0% 0%;
+    transform: rotate(4deg);
+    position: absolute;
+    z-index: 1;
+    left: 85rem;
+    bottom: -8rem;
+    height: 300px;
+    width: 600px;
+    background: #32a3b1;
+}
+.profile {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    width: 500px;
+}
+.profile-container {
+    border-bottom: 4px solid #fff;
+    position: relative;
+}
+.profile-pic {
+    position: relative;
+    top: 2.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fa {
+    color: white;
+    border: 4px solid #fff;
+    padding: 0.3rem 1.1rem;
+    border-radius: 50%;
+    font-size: 6.5rem;
+    background: #32a3b1;
+}
+.aboutme-container, .extra-container {
+    margin-left: 12.5rem;
+    width: 60%;
+}
+.subtitle {
+    color: #4C4C4C;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.subtitle-profile {
+    color: #fff;
+    font-size: 2rem;
+}
+.extra {
+    font-weight: 100;
+}
+

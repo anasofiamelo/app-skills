@@ -1,0 +1,62 @@
+h1, h4, h2, p, label, td {
+    color: #293241;
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 2rem;
+}
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+h4 {
+    font-size: 40px;
+}
+label {
+    display: none;
+}
+.page-container {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    margin-top: -5rem;
+}
+table thead td, table tbody td {
+    width: 20rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+table thead td {
+    font-weight: 500;
+}
+table tbody tr {
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+}
+
+
+/* buttons */
+.btn {
+    background: #ebf5fc;
+    border-radius: 25px;
+    color: #32a3b1;
+    font-size: 1.3rem;
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.btn:hover {
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.15);  
+}

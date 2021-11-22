@@ -1,3 +1,16 @@
-body {
-    background: #f8f8f8;
+.body {
+    position: relative;
+    width: 100vw;
+    left: -20%;
+    background: #ebf5fc;
+    display: flex;
+    overflow: hidden;
+}
+.footer {
+    width: 15%;
+    height: 100vh;
+}
+.main {
+    width: 85%;
+    background: #ebf5fc;
 }

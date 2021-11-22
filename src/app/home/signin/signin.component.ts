@@ -31,6 +31,9 @@ export class SignInComponent implements OnInit {
             user: ['', Validators.required],
             password: ['', Validators.required]
         })
+        this.platformDetectorService.isPlatformBrowser() 
+                    && 
+        this.userInput.nativeElement.focus()
     }
     
     login(){
@@ -39,10 +42,10 @@ export class SignInComponent implements OnInit {
 
         this.authService
         .authenticate(user, password)
-        .subscribe(() => this.router.navigateByUrl('/lista'),
+        .subscribe(() => this.router.navigateByUrl('/' + user),
             err => { 
                 console.log(err.message)
-                this.loginForm.reset()
+                this.loginForm.reset() 
                 this.platformDetectorService.isPlatformBrowser() 
                     && 
                 this.userInput.nativeElement.focus()

@@ -1,0 +1,65 @@
+<footer *ngIf="(user$ | async) as user">
+
+    <div class="content">
+        
+        <div class="nav">
+            <div class="user" *ngIf="user; else login">
+                <a class="user-name" *ngIf="!user.admin; else admin"> {{ user.nome }} </a>
+                <!-- <img class="user-img" [src]="user.profilePic"> -->
+                <i class="fa fa-user-circle user-img" aria-hidden="true"></i> 
+            </div>
+            
+
+            <div class="icon-container">
+                <div class="icon btn">
+                    <a [routerLink]="['']">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span> Home </span>
+                    </a>
+                </div>
+    
+                <div class="icon btn">
+                    <a [routerLink]="['s', 'add']">
+                        <i class="fa fa-plus-circle fa-2x"></i>
+                        <span> Add Skill </span>
+                    </a>
+                </div>
+    
+                <div class="icon btn">
+                    <a [routerLink]="['s', 'skills']">
+                        <i class="fa fa-bar-chart fa-2x" aria-hidden="true"></i>
+                        <span> My Skills </span>
+                    </a>
+                </div>
+    
+                <div class="icon btn">
+                    <a [routerLink]="['s', 'edit']">
+                        <i class="fa fa-cog fa-2x"></i>
+                        <span> My Account </span>
+                    </a>
+                </div>
+            </div>
+            
+
+            <div class="footer">
+                <a class="logout" (click)="logout()">
+                    <span> Logout </span>
+                </a>
+            </div>
+
+        </div>
+
+        
+
+    </div>
+</footer>
+
+<ng-template #login>
+    <span class="navbar-text">
+        <a [routerLink]="['']"> Please, login </a>
+    </span>
+</ng-template>
+
+<ng-template #admin>
+    <a class="user-name"> Admin </a>
+</ng-template>

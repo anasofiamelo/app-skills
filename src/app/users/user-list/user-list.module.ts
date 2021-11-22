@@ -1,23 +1,29 @@
-import { NgModule } from '@angular/core'
-import { CommonModule } from '@angular/common'
+import { NgModule } from "@angular/core";
 
-import { UsersComponent } from "./users/users.component"
-import { UserListComponent } from "./user-list.component"
-import { FilterBySkill } from './filter-by-skill.pipe'
-import { UserModule } from '../user/user.module'
-import { HomeModule } from 'src/app/home/home.module'
+//declarations
+import { UserListComponent } from "./user-list.component";
+import { DataComponent } from "./data/data.component";
+import { ProfileComponent } from "./profile/profile.component";
 
-@NgModule({
+//imports
+import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
+import { CommonModule } from "@angular/common";
+import { VMessageModule } from "src/app/shared/components/vmessage/vmessage.module";
+
+@NgModule({ 
     declarations: [
         UserListComponent,
-        UsersComponent,
-        FilterBySkill
+        DataComponent,
+        ProfileComponent
     ],
     imports: [
+        HttpClientModule,
         CommonModule,
-        UserModule,
-        HomeModule
-    ]
+        VMessageModule,
+        RouterModule
+    ], 
+    exports: []
 })
 
 export class UserListModule {

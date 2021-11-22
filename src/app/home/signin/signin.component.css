@@ -1,32 +1,78 @@
-.input {
-    border: none;
-    border-bottom: 2px solid #06d6a0;
-    width: 300px;
+h4, h2, p, label {
+    color: #293241;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 2rem;
 }
-.btn {
-    width: 250px;
-    height: 50px;
-    background: #06d6a0;
-    color: white;
-    border-radius: 25px;
-}
-.form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 200px;
-}
-.form * {
-    margin-top: 10px;
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 h4 {
     font-size: 40px;
-    color: #073b4c;
 }
-p {
-    color: #073b4c;
+label {
+    display: none;
 }
-a {
-    border-bottom: 1px solid #073b4c;
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
+.form-group {
+    width: 450px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background: #ebf5fc;
+    margin: 2.5rem 0;
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 1),
+                6px 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;          
+    align-items: center;
+}
+.signup-container {
+    color: #293241;
+    font-size: 1.2rem;
+}
+.signup {
+    color: #32a3b1; 
+    text-decoration: none;
+    border: none;
+    text-align: center;
+}
+.input {
+    background: none;
+    border: none;
+    margin-left: 0.6rem;
+}
+.input:focus {
+    outline-width: 0;
+} 
+.btn {
+    width: 450px;
+    height: 55px;
+    background: #ebf5fc;
+    border-radius: 25px;
+    color: #32a3b1;
+    font-size: 1.5rem;
+    box-shadow: -2px -2px 8px rgba(255, 255, 255, 1),
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+.btn:hover {
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.15);  
+}
+ i {
+     margin-left: 2rem;
+ }

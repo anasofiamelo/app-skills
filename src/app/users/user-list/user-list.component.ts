@@ -1,8 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
-import { UserService } from '../user/user.service';
+import { DataService } from './data/data.service';
+import { Data } from './data/data';
+import { UserService } from '../../core/user/user.service';
 import { User } from '../user/user';
+
 
 @Component({
   selector: 'app-user-list',
@@ -10,23 +14,26 @@ import { User } from '../user/user';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-
-  users: User[] = [];
+  dados: Data[] = [];
   filter: string = '';
-  user: string = '';
-
-  constructor(
-    private userService: UserService,
-    private activatedRoute: ActivatedRoute
-    ) {}
+  user$: Observable<User>
+  user: User
   
-  ngOnInit(): void {
+  constructor(
+    userService: UserService,
+    private dataService: DataService,
+    private router: Router) {
+        this.user$ = userService.getUser()
+        this.user$.subscribe(user => {
+        this.user = user})
+    }
 
-    this.user = this.activatedRoute.snapshot.params.user
-
-    this.userService.listFromUser(this.user)
-      .subscribe(users => {
-      this.users = users})
-
-  }
-}      
+    ngOnInit() {
+      this.carregarData()
+    }
+    carregarData(){
+      this.dataService.listDataFromUser(this.user.id).subscribe(data => this.dados = data)
+    }
+}  
+ 
+ 

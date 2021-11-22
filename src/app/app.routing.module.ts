@@ -1,20 +1,53 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+
 import { NotFoundComponent } from './errors/not-found/not-found.component';
-import { SignInComponent } from './home/signin/signin.component';
+import { EditProfileFormComponent } from './users/edit-profile-form/edit-profile-form.component';
+import { SkillsFormComponent } from './users/skills-form/skills-form.component';
+import { SkillsListComponent } from './users/skills-list/skills-list.component';
+import { SkillsComponent } from './users/skills/skills.component';
 import { UserListComponent } from './users/user-list/user-list.component';
-import { UserComponent } from './users/user/user.component';
 
 const routes: Routes = [
-    { path: '', component: SignInComponent},
-    { path: 'users', component: UserListComponent },
-    { path: ':user', component: UserListComponent },
-    { path: '**', component: UserListComponent }
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+    },
+    {
+        path: 'home',
+        loadChildren: './home/home.module#HomeModule'
+    },
+
+    { 
+        path: ':user', 
+        component: UserListComponent 
+    },
+
+    { 
+        path: 's/edit', 
+        component: EditProfileFormComponent
+    },
+
+    { 
+        path: 's/skills', 
+        component: SkillsListComponent
+    },
+
+    { 
+        path: 's/add', 
+        component: SkillsFormComponent 
+    },
+
+    { 
+        path: '**', 
+        component: NotFoundComponent
+    }
 ]
 
 @NgModule({
-    imports: [ RouterModule.forRoot(routes) ],
+    imports: [ RouterModule.forRoot(routes, { useHash: true}) ],
     exports: [ RouterModule ]
 })
 

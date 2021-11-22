@@ -1,17 +1,51 @@
-
-<div class="text-center mt-3 mb-3">
-    <form>
-        <input 
-        class="rounded" 
-        type="search" 
-        placeholder="search..."
-        autofocus
-        (keyup)="filter = $event.target.value">
-        <i aria-hidden="true" class="fa fa-search ml-1"></i>
-    </form>
+<div class="page-container">
+    <div class="grid-container">
+        
+        <div class="main">
+            <div class="skills-container">
+                <h1> Hello, <span> {{ user.nome }} </span> </h1>
+                <div class="skills">
+                    <h2 class="subtitle"> Skills ({{ dados.length}}) </h2>
+                    <div *ngIf="dados.length > 0; else noSkills" class="data row"> 
+                        <div *ngFor="let data of dados" class="dados col-2">
+                            <p> {{ data.id_action }} </p>
+                            <app-data 
+                                [icon]="data.icon"
+                                [habilidade]="data.habilidade"
+                                [nivel]="data.nivel">
+                            </app-data>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="graphics">
+                    <h2 class="subtitle"> Statistics </h2>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="profile">
+            <app-profile
+                [nome]="user.nome"
+                [desc]="user.profileDesc"
+                [user]="user.user"
+                [email]="user.email">
+            </app-profile>
+        </div>
+        
+        
+    </div>
 </div>
 
-{{ filter }}
- 
-<app-users [users]="users | filterBySkills: filter"></app-users>
- 
+
+
+
+
+<ng-template #noSkills>
+    <div class="add-container">
+        <p> No skills here... </p>
+        <a [routerLink]="['s', 'add']"> <i class="fa fa-plus-circle" aria-hidden="true"></i> </a>
+    </div>
+    
+</ng-template>

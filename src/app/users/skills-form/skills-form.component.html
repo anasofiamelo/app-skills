@@ -1,0 +1,67 @@
+<div class="form-container">
+  <h1> ADD SKILL </h1>
+  <form [formGroup]="skillForm" (submit)="submit()">
+    
+    <div class="skills-table">
+
+        <div class="form-group search">
+            <input 
+                class="input" 
+                type="search" 
+                placeholder="search skill..."
+                autofocus
+                (keyup)="filter = $event.target.value">
+            <i class="fa fa-search ml-1"></i>
+        </div>
+ 
+      <table class="oi">
+            <tr *ngFor="let skill of skills | filterBySkill: filter">
+              <td> 
+                <div class="wrapper">
+                  <input 
+                    formControlName="habilidade_id"
+                    class="state" 
+                    type="radio" 
+                    [id]="skill.habilidade" 
+                    [value]="skill.id">
+                  <label 
+                    class="label"
+                    [for]="skill.habilidade">
+                    <div class="indicator"></div>
+                    <span class="text"> {{ skill.habilidade }} </span>
+                  </label>
+                </div>
+              </td>
+              
+              <td>
+                <app-skills> </app-skills>
+              </td>
+              
+            </tr>
+      </table>
+    </div>
+     
+
+      <div class="form-group">
+        <label for="nivel">Nivel</label>
+        <input 
+          formControlName="nivel"
+          class="form-control" 
+          placeholder="Skill level">
+          <app-vmessage 
+                *ngIf="skillForm.get('nivel').errors?.required"
+                texto="Skill level is required">
+            </app-vmessage>   
+      </div>
+
+      <div class="btn-container">
+        <button [disabled]="skillForm.invalid" type="submit" class="btn">
+          Upload
+        </button>
+
+        <a href="/" class="btn"> Cancel </a>
+      </div>
+
+
+  </form>
+</div> 

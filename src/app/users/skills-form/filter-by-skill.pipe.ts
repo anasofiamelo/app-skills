@@ -1,22 +1,22 @@
 import { Pipe, PipeTransform } from '@angular/core'
-import { User } from '../user/user';
+import { Skills } from '../skills/skills';
 
-@Pipe({ name: 'filterBySkills'})
+@Pipe({ name: 'filterBySkill'})
 
 export class FilterBySkill implements PipeTransform {
 
-    transform(users: User[], skillQuery: string) {
+    transform(skills: Skills[], skillQuery: string) {
         skillQuery = skillQuery
         .trim()
         .toLowerCase()
 
         if(skillQuery){
-            return users.filter(user => user.nome
+            return skills.filter(skill => skill.habilidade
                 .toLowerCase()
                 .includes(skillQuery)
             );
         } else {
-            return users
+            return skills
         }
     }
 

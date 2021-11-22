@@ -1,28 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
 
-import { UsersModule } from './users/users.module';
+//imports
 import { AppRoutingModule } from './app.routing.module';
-import { ErrorsModule } from './errors/errors.module';
-import { HomeModule } from './home/home.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
-import { CardModule } from './shared/components/card/card.module';
-
-
+import { UsersModule } from './users/users.module';
+import { ErrorsModule } from './errors/errors.module';
+import { UserListModule } from './users/user-list/user-list.module';
+import { HttpClientModule } from '@angular/common/http';
+import { EditProfileFormModule } from './users/edit-profile-form/edit-profile-form.module';
+import { SkillsFormModule } from './users/skills-form/skills-form.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
+  exports: [
+  ],
   imports: [
-    BrowserModule,
-    UsersModule,
     AppRoutingModule,
-    ErrorsModule,
-    HomeModule,
+    HttpClientModule,
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+    RouterModule,
     CoreModule,
-    CardModule
+    EditProfileFormModule,
+    ErrorsModule,
+    UserListModule,
+    UsersModule,
+    SkillsFormModule
   ],
   providers: [],
   bootstrap: [AppComponent]

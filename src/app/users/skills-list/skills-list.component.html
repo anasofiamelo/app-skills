@@ -1,0 +1,41 @@
+<div class="page-container">
+    <div class="container">
+        <h1> MY SKILLS </h1> 
+    <div class="skills-container">
+        <table>
+            <thead>
+                <tr> 
+                    <td> Skill </td>
+                    <td> Level </td>
+                    <td> ATT </td>
+                    <td> Delete </td>
+                </tr>
+            </thead>
+            <tbody *ngIf="dados.length > 0; else noSkills">
+
+                <tr class="dados" *ngFor="let data of dados">
+                    <td> {{ data.habilidade }} </td>
+                    <td> {{ data.nivel }} </td>
+                    <td> <button class="btn"> <i class="fa fa-refresh" aria-hidden="true"></i> </button> </td>
+                    <td> <button 
+                            class="btn" 
+                            (click)="delete(data)"> 
+                            <i class="fa fa-trash-o" aria-hidden="true"></i> 
+                        </button> 
+                    </td>
+                </tr>
+
+            </tbody>
+
+            
+        </table>
+    </div>
+    </div>
+    
+</div>
+
+<ng-template #noSkills>
+    <tbody> <tr>
+        <td> No skills yet </td>
+    </tr></tbody>
+</ng-template>
