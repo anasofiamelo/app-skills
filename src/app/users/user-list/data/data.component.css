@@ -12,10 +12,6 @@
 ul {
     padding: 0;
 }
-.habilidade {
-    margin-bottom: 10px;
-    list-style: none;
-}
 i {
     color: #293241;
     font-size: 4rem;
@@ -29,6 +25,8 @@ button {
 .habilidade {
     font-weight: 500;
     font-size: 1.5rem;
+    margin-bottom: 10px;
+    list-style: none;
 }
 .level {
     color: #32a3b1;

@@ -14,11 +14,14 @@ import { User } from '../user/user';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
+  dados$: Observable<Data[]>
   dados: Data[] = [];
-  filter: string = '';
+
   user$: Observable<User>
   user: User
-  
+
+  filter: string = '';
+
   constructor(
     userService: UserService,
     private dataService: DataService,
@@ -29,11 +32,11 @@ export class UserListComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.carregarData()
-    }
-    carregarData(){
+      // this.dados$ = this.dataService.listDataFromUser(this.user.id)
+      // console.log(this.dados.length)
       this.dataService.listDataFromUser(this.user.id).subscribe(data => this.dados = data)
     }
+
 }  
  
  

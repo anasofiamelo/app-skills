@@ -1,0 +1,30 @@
+<button type="button" (click)="openModal(template)"> 
+    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+</button> 
+
+
+
+<ng-template #template> 
+    <div class="modal-container">
+        
+        <form [formGroup]="newSkillForm" (submit)="submitModal()"> 
+            <h2 class="title"> Criar nova habilidade </h2> 
+            <div class="form-group">
+                <input
+                    formControlName="habilidade"
+                    type="text"
+                    placeholder="Habilidade"
+                    class="input">
+                </div>
+                <app-vmessage
+                    *ngIf="newSkillForm.get('habilidade').errors?.habilidadeExists"
+                    text="Habilidade already exists">
+                </app-vmessage>
+            <button type="submit" class="btn"> Send </button>
+            
+        </form>
+        <button (click)="modalRef.hide()" class="btn"> Close</button>
+
+    </div>
+    
+  </ng-template>

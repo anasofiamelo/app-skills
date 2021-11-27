@@ -1,5 +1,13 @@
 <div class="form-container">
-  <h1> ADD SKILL </h1>
+
+  <h1 class="title"> 
+    ADD SKILL 
+    <div *ngIf="user.admin">
+      <app-modal></app-modal>
+    </div>
+    
+  </h1>
+  
   <form [formGroup]="skillForm" (submit)="submit()">
     
     <div class="skills-table">
@@ -14,30 +22,39 @@
             <i class="fa fa-search ml-1"></i>
         </div>
  
-      <table class="oi">
-            <tr *ngFor="let skill of skills | filterBySkill: filter">
-              <td> 
-                <div class="wrapper">
-                  <input 
-                    formControlName="habilidade_id"
-                    class="state" 
-                    type="radio" 
-                    [id]="skill.habilidade" 
-                    [value]="skill.id">
-                  <label 
-                    class="label"
-                    [for]="skill.habilidade">
-                    <div class="indicator"></div>
-                    <span class="text"> {{ skill.habilidade }} </span>
-                  </label>
-                </div>
-              </td>
-              
-              <td>
-                <app-skills> </app-skills>
-              </td>
-              
-            </tr>
+      <table>
+        <div class="oi">
+          <tr *ngFor="let skill of skills | filterBySkill: filter">
+            <td> 
+              <div class="wrapper">
+                <input 
+                  formControlName="habilidade_id"
+                  class="state" 
+                  type="radio" 
+                  [id]="skill.habilidade" 
+                  [value]="skill.id">
+                <label 
+                  class="label"
+                  [for]="skill.habilidade">
+                  <div class="indicator"></div>
+                  <span class="text"> {{ skill.habilidade }} </span>
+                </label>
+                <button 
+                  (click)="excluirHabilidade(skill)"
+                  type="button"> 
+                  <i *ngIf="user.admin" class="fa fa-trash-o" aria-hidden="true"></i> 
+                </button>
+                
+              </div>
+            </td>
+            
+            <td>
+              <app-skills> </app-skills>
+            </td>
+            
+          </tr>
+        </div>
+            
       </table>
     </div>
      

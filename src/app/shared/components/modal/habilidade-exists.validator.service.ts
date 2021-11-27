@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AbstractControl } from "@angular/forms";
-import { SkillService } from "../skills/skills.service";
+import { ModalService } from "./modal.service";
 
 import { debounceTime, switchMap, map, first } from 'rxjs/operators';
 
@@ -8,7 +8,7 @@ import { debounceTime, switchMap, map, first } from 'rxjs/operators';
 
 export class HabilidadeExistsValidatorService {
 
-    constructor(private skillService: SkillService) {}
+    constructor(private modalService: ModalService) {}
 
     checkHabilidade(){
         return (control: AbstractControl) => {
@@ -16,9 +16,9 @@ export class HabilidadeExistsValidatorService {
                 .valueChanges
                 .pipe(debounceTime(300))
                 .pipe(switchMap(habilidade =>
-                    this.skillService.checkHabilidade(habilidade)
+                    this.modalService.checkSkillExists(habilidade)
                 ))
-                .pipe(map(isTaken => !isTaken ? { habilidadeExists: true } : null))
+                .pipe(map(isTaken => isTaken ? { habilidadeExists: true } : null))
                 .pipe(first());
     }
     }

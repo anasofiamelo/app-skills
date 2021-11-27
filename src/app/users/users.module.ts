@@ -6,15 +6,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 
-import { UserComponent } from '../users/user/user.component';
+
 import { SkillsListComponent } from './skills-list/skills-list.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
 
 
 
 @NgModule({
     declarations: [ 
-        UserComponent, 
-        SkillsListComponent
+        SkillsListComponent,
+        ProfileUserComponent
     ],
     imports: [ 
         FormsModule,
@@ -24,7 +25,6 @@ import { SkillsListComponent } from './skills-list/skills-list.component';
         VMessageModule,
         RouterModule
     ]
-
 })
 
 export class UsersModule {} 

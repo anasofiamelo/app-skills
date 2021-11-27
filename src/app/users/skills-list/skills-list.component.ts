@@ -20,7 +20,7 @@ export class SkillsListComponent implements OnInit {
 
     constructor(
         userService: UserService,
-        private dataService: DataService
+        private dataService: DataService 
     ){
         this.user$ = userService.getUser()
         this.user$.subscribe(user => {

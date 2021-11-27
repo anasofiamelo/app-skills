@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -15,18 +16,20 @@ import { SkillService } from '../skills/skills.service';
 })
 export class SkillsFormComponent implements OnInit {
   
-  skills: Skills[] = [];
+  skills: Skills[];
   skillForm: FormGroup;
   user$: Observable<User>
   user: User
   filter: string = '';
 
+  
 
   constructor(
     private userService: UserService,
     private router: Router,
     private skillService: SkillService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    
   ) { 
     this.user$ = userService.getUser()
     this.user$.subscribe(user => {
@@ -38,6 +41,7 @@ export class SkillsFormComponent implements OnInit {
 
   ngOnInit() {
     this.skillService.list().subscribe(skill => this.skills = skill)
+    
     this.skillForm = this.formBuilder.group({
       icon: [''],
       id: [''],
@@ -47,14 +51,21 @@ export class SkillsFormComponent implements OnInit {
           Validators.maxLength(13),]],
       habilidade_id: ['', Validators.required]
     })
-    
   }
+
   submit(){
     this.skillForm.controls['id'].setValue(this.user.id)
     this.skillForm.controls['icon'].setValue(this.skills[0].icon)
     const newSkill = this.skillForm.getRawValue() as Skills;
-    this.skillService.upload(newSkill, this.user.id).subscribe(() => { alert('Habilidade criada com sucesso!')}, err => { console.log(err)})
+    this.skillService.upload(newSkill, this.user.id).subscribe(() => { alert('Habilidade adicionada com sucesso!')}, err => { console.log(err)})
 }
-
+  excluirHabilidade(skill){
+    this.skillService.delete(skill.id).subscribe(() => {
+      alert('Habilidade deletada com sucesso')
+      window.location.reload()
+    },
+    err => { console.log(err)}
+    )
+  }
 }
    

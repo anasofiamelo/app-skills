@@ -51,19 +51,14 @@ export class EditProfileFormComponent implements OnInit {
         const password = this.editForm.get('password').value ;
         const newUser = this.editForm.getRawValue() as User;
 
-        this.authService
-        .authenticate(user, password)
-        .subscribe(() => {
           this.userService.upload(this.user.user, newUser)
           .subscribe((res) => {
-            const authToken = res.headers.get('Authorization')
-            this.userService.setToken(authToken)
             alert('Conta alterada com sucesso!')
             window.location.reload()
+            this.router.navigateByUrl('/' + user)
           })
             
-            this.router.navigateByUrl('/' + user)
-        })  
+
     }
 
     handleFile(file: File){

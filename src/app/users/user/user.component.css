@@ -1,0 +1,63 @@
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 19rem;
+    height: 25rem;
+    margin-bottom: 5px;
+    box-shadow:
+    -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 10px 20px 10px 10px;
+}
+.user-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+.tags {
+    display: flex;
+}
+.fa {
+    color: #32a3b1;
+}
+.nome {
+    color: #183446;
+    font-family: "Nanum Gothic";
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.desc {
+    color: rgba(24, 52, 70, 0.6);
+    font-weight: 400;
+    font-size: 1rem;
+}
+button {
+    width: 250px;
+    height: 55px;
+    background: #ebf5fc;
+    border-radius: 25px;
+    color: #32a3b1;
+    font-size: 1.5rem;
+    box-shadow:
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    2px 2px 8px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 11s;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    border: none;
+}
+button:hover {
+    box-shadow: inset -2px -2px 8px rgba(255, 255, 255, 1),
+    inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 8px rgba(0, 0, 0, 0.15);
+}

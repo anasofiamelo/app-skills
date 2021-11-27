@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Skills } from '../skills/Skills';
-
-import { User } from './user';
+import { Data } from '../user-list/data/data';
 
 const API = 'http://localhost:3000'
 
@@ -11,6 +9,6 @@ const API = 'http://localhost:3000'
 export class UserService {
     constructor(private http: HttpClient){}
         
-
+    
     
 }

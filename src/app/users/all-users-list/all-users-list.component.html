@@ -1,0 +1,28 @@
+<div class="page-container">
+
+    <h1> USERS </h1>
+
+    <div class="form-group search">
+        <input 
+            class="input" 
+            type="search" 
+            placeholder="search user..."
+            autofocus
+            (keyup)="filter = $event.target.value">
+        <i class="fa fa-search ml-1"></i>
+    </div>
+
+
+    <div class="users row">
+        <div *ngFor="let user of users | filterByName: filter" class="user col-4">
+            <!-- <i *ngIf="user.admin" class="fa fa-wrench"></i>         -->
+            <p-user
+                [nome]="user.nome"
+                [id]="user.id"
+                [email]="user.email"
+                [userName]="user.user">
+        </p-user>
+        </div>
+    </div>
+    
+</div>

@@ -16,10 +16,10 @@ label {
     display: none;
 }
 .form-container {
-    margin: 10rem 40rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 5rem 0;
 }
 .form-group {
     width: 450px;

@@ -15,16 +15,9 @@ label {
     display: none;
 }
 .page-container {
-    width: 80vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 10rem 0;
 }
-.container {
-    margin-top: -5rem;
-}
+
 table thead td, table tbody td {
     width: 20rem;
     padding: 1rem;

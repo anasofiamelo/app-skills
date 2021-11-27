@@ -1,0 +1,59 @@
+
+<div class="page-container">
+    <a [routerLink]="['u', 'users']"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    
+    <div class="header-container">
+        <div class="header">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <div>
+                <h1 class="user-name">{{ user.nome }}
+                    <p class="user"> @{{ user.user }}</p>
+                 </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="table-container">
+            <table> 
+                <h2 class="subtitle infos"> Profile Info </h2>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{ user.email }}</td>
+                        <td><i class="fa fa-envelope-o" aria-hidden="true"></i></td>
+                    </tr>    
+                    <tr>
+                        <td>Contact</td>
+                        <td> 40029822 </td>
+                        <td> <i class="fa fa-phone" aria-hidden="true"></i> </td>
+                    </tr>
+                    <tr>
+                        <td>Profile Description</td>
+                        <td> {{ user.profileDesc }} </td>
+                    </tr>
+
+            </table>
+        </div>
+        
+        <div class="skills-container">
+            <h2 class="subtitle"> Skills ({{ dados.length }})</h2>
+            <div class="data" *ngIf="dados.length > 0; else noSkills">
+                <div class="dados" *ngFor="let data of dados">
+                    <i id="icon" [class]="data.icon"></i>
+                    <ul>
+                        <li class="habilidade"> {{ data.habilidade }} </li>
+                        <li class="level"> {{ data.nivel }} </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+
+    
+    <ng-template #noSkills>
+        <p> This user does not have any skills </p>
+    </ng-template>
+</div>

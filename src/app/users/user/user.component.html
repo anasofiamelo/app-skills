@@ -1,1 +1,13 @@
-{{ user }}
+
+    <div class="user-container">
+        <div class="user-header">
+            <i class="fa fa-user-o fa-3x" aria-hidden="true"></i>
+            <h3 class="nome"> {{ nome }} </h3>
+            <p class="desc"> {{ userName }} </p>
+            <p class="desc"> {{ id }} </p>
+        </div>
+        <div class="user-main">
+            <p class="desc text-center"> *description here* </p>
+            <a> <button (click)="this.router.navigateByUrl('/profile/' + (id) )"> View Profile </button> </a>
+        </div>
+    </div>

@@ -8,6 +8,8 @@ import { HttpClient } from "@angular/common/http";
 import { Skills } from "src/app/users/skills/Skills";
 import { DeclareFunctionStmt } from "@angular/compiler";
 import { NewUser } from "src/app/home/signup/newuser";
+import { Data } from "src/app/users/user-list/data/data";
+import { FormGroup } from "@angular/forms";
 
 const API = 'http://localhost:3000'
 
@@ -55,5 +57,10 @@ export class UserService {
     listFromUser(user: string){
         return this.http.get<User[]>(`${API}/users/${user}`)
     }
-    
+    listUsers(){
+        return this.http.get<User[]>(API + '/lista/') 
+    }
+    userById(id: number){
+        return this.http.get<User>(API + '/users/' + id)
+    }
 } 

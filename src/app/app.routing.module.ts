@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { AllUsersListComponent } from './users/all-users-list/all-users-list.component';
 import { EditProfileFormComponent } from './users/edit-profile-form/edit-profile-form.component';
+import { ProfileUserComponent } from './users/profile-user/profile-user.component';
 import { SkillsFormComponent } from './users/skills-form/skills-form.component';
 import { SkillsListComponent } from './users/skills-list/skills-list.component';
 import { SkillsComponent } from './users/skills/skills.component';
@@ -38,6 +40,16 @@ const routes: Routes = [
     { 
         path: 's/add', 
         component: SkillsFormComponent 
+    },
+
+    { 
+        path: 'u/users', 
+        component: AllUsersListComponent 
+    },
+
+    { 
+        path: 'profile/:user', 
+        component: ProfileUserComponent 
     },
 
     { 

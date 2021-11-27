@@ -5,7 +5,7 @@
             <div class="skills-container">
                 <h1> Hello, <span> {{ user.nome }} </span> </h1>
                 <div class="skills">
-                    <h2 class="subtitle"> Skills ({{ dados.length}}) </h2>
+                    <h2 class="subtitle"> Skills ({{ dados.length }})</h2>
                     <div *ngIf="dados.length > 0; else noSkills" class="data row"> 
                         <div *ngFor="let data of dados" class="dados col-2">
                             <p> {{ data.id_action }} </p>
@@ -16,7 +16,7 @@
                             </app-data>
                         </div>
                     </div>
-                </div>
+                </div> 
     
                 <div class="graphics">
                     <h2 class="subtitle"> Statistics </h2>
@@ -45,7 +45,7 @@
 <ng-template #noSkills>
     <div class="add-container">
         <p> No skills here... </p>
-        <a [routerLink]="['s', 'add']"> <i class="fa fa-plus-circle" aria-hidden="true"></i> </a>
+        <a [routerLink]="['/s', 'add']"> <i class="fa fa-plus-circle" aria-hidden="true"></i> </a>
     </div>
     
 </ng-template>

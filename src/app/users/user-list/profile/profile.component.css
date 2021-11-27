@@ -12,7 +12,7 @@ p {
     z-index: 1;
     left: 88rem;
     top: -2rem;
-    background: #32a3b1;
+    background: rgba(50, 163, 177, 0.85);
     padding: 1.27rem;
     border-radius: 0% 0% 0% 45%;
     transform: rotate(7deg);
@@ -28,7 +28,7 @@ p {
     bottom: -8rem;
     height: 300px;
     width: 600px;
-    background: #32a3b1;
+    background: rgba(50, 163, 177, 0.85);
 }
 .profile {
     display: flex;
@@ -61,10 +61,10 @@ p {
     width: 60%;
 }
 .subtitle {
-    color: #4C4C4C;
+    color: rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
     font-weight: 400;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     font-size: 1.5rem;
     text-align: center;
 }

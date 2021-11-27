@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
 //declarations
 import { FilterBySkill } from "./filter-by-skill.pipe";
@@ -12,6 +12,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { VMessageModule } from "src/app/shared/components/vmessage/vmessage.module";
 import { SkillsModule } from "../skills/skills.module";
+import { ModalModule } from "src/app/shared/components/modal/modal.module";
+
 
 @NgModule({ 
     declarations: [
@@ -25,8 +27,10 @@ import { SkillsModule } from "../skills/skills.module";
         CommonModule,
         VMessageModule,
         RouterModule,
-        SkillsModule
-    ]
+        SkillsModule,
+        ModalModule
+    ],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 
 export class SkillsFormModule {
