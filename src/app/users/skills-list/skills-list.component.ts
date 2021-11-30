@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, TemplateRef } from "@angular/core";
+import { BsModalRef, BsModalService } from "ngx-bootstrap/modal";
 import { Data } from "@angular/router";
 import { Observable } from "rxjs";
 import { User } from "src/app/core/user/user";
@@ -13,14 +14,16 @@ import { DataService } from "../user-list/data/data.service";
 })
 
 export class SkillsListComponent implements OnInit {
-
+    modalRef: BsModalRef;    
     dados: Data[] = [];
+    skillClicada: Data;
     user$: Observable<User>
     user: User
 
     constructor(
         userService: UserService,
-        private dataService: DataService 
+        private dataService: DataService,
+        private modalService: BsModalService
     ){
         this.user$ = userService.getUser()
         this.user$.subscribe(user => {
@@ -30,18 +33,22 @@ export class SkillsListComponent implements OnInit {
     ngOnInit(){
         this.carregarData()
     }
+
     carregarData(){
-        this.dataService.listDataFromUser(this.user.id).subscribe(data => this.dados = data)
+        this.dataService.listDataFromUser(this.user.id)
+            .subscribe(data => {
+                this.dados = data
+            })
     }
-    delete(skill: Data){
-        this.dataService.deleteDataFromUser(skill.id_action)
+    openModal(template: TemplateRef<any>, skill){
+        this.skillClicada = skill;
+        this.modalRef = this.modalService.show(template)
+    }
+
+    delete(){
+        this.dataService.deleteDataFromUser(this.skillClicada.id_action)
         .subscribe(() => { 
         })
-        alert('skill deleted')
         window.location.reload()
     }
-    confirmDelete(){
-        
-    }
-    denyDelete(){}
 }

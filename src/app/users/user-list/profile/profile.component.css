@@ -7,35 +7,39 @@ h4, p {
 p {
     font-size: 2rem;
 }
+.bolhas {
+    height: 600px;
+    width: 600px;
+    position: relative;
+    overflow: hidden;
+}
 .bg-top {
     position: absolute;
     z-index: 1;
-    left: 88rem;
-    top: -2rem;
+    left: 5rem;
+    top: -3rem;
     background: rgba(50, 163, 177, 0.85);
-    padding: 1.27rem;
     border-radius: 0% 0% 0% 45%;
     transform: rotate(7deg);
     height: 600px;
     width: 600px;
 }
-.bg-bottom {
+/* .bg-bottom {
+    left: -10rem;
+    position: absolute;
     border-radius: 40% 0% 0% 0%;
     transform: rotate(4deg);
-    position: absolute;
     z-index: 1;
-    left: 85rem;
-    bottom: -8rem;
     height: 300px;
     width: 600px;
-    background: rgba(50, 163, 177, 0.85);
-}
+    background: rgba(50, 163, 177, 0.85); 
+} */
 .profile {
     display: flex;
     flex-direction: column;
-    position: relative;
     z-index: 2;
     width: 500px;
+    transform: rotate(-7deg);
 }
 .profile-container {
     border-bottom: 4px solid #fff;

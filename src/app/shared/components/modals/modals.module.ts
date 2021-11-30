@@ -1,16 +1,19 @@
 import { NgModule } from "@angular/core";
 
 //declarations
-import { ModalComponent } from "./modal.component";
+import { ModalAddSkillComponent } from "./modal-add-skill/modal-add-skill.component";
 
 //imports
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { VMessageModule } from "../vmessage/vmessage.module";
 import { CommonModule } from "@angular/common";
+import { ModalConfirmComponent } from "./modal-confirm/modal-confirm.component";
+
 
 @NgModule({
     declarations: [
-        ModalComponent
+        ModalAddSkillComponent,
+        ModalConfirmComponent
     ],
     imports: [
         FormsModule,
@@ -19,10 +22,11 @@ import { CommonModule } from "@angular/common";
         CommonModule
     ],
     exports: [
-        ModalComponent
+        ModalAddSkillComponent,
+        ModalConfirmComponent
     ]
 })
 
-export class ModalModule {
+export class ModalsModule {
 
 }

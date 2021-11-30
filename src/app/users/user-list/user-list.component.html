@@ -6,9 +6,8 @@
                 <h1> Hello, <span> {{ user.nome }} </span> </h1>
                 <div class="skills">
                     <h2 class="subtitle"> Skills ({{ dados.length }})</h2>
-                    <div *ngIf="dados.length > 0; else noSkills" class="data row"> 
-                        <div *ngFor="let data of dados" class="dados col-2">
-                            <p> {{ data.id_action }} </p>
+                    <div *ngIf="dados.length > 0; else noSkills" class="data"> 
+                        <div *ngFor="let data of dados" class="dados">
                             <app-data 
                                 [icon]="data.icon"
                                 [habilidade]="data.habilidade"
@@ -18,8 +17,9 @@
                     </div>
                 </div> 
     
-                <div class="graphics">
+                <div class="statistics-container">
                     <h2 class="subtitle"> Statistics </h2>
+                    <app-statistics></app-statistics>
                 </div>
             </div>
         </div>

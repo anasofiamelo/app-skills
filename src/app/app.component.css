@@ -1,16 +1,14 @@
 .body {
-    position: relative;
-    width: 100vw;
-    left: -20%;
+    display: grid;
+    grid-template-columns: 1fr 8fr;
     background: #ebf5fc;
-    display: flex;
-    overflow: hidden;
+    width: 100%;
 }
 .footer {
-    width: 15%;
     height: 100vh;
+    background: #ebf5fc;
 }
 .main {
-    width: 85%;
+    margin-left: 3rem;
     background: #ebf5fc;
 }

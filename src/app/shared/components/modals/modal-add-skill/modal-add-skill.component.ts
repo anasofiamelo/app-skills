@@ -7,11 +7,11 @@ import { NewSkill } from "./NewSkill";
 
 @Component({
     selector: 'app-modal',
-    templateUrl: './modal.component.html',
-    styleUrls: ['./modal.component.css']
+    templateUrl: './modal-add-skill.component.html',
+    styleUrls: ['./modal-add-skill.component.css']
 })
 
-export class ModalComponent implements OnInit{
+export class ModalAddSkillComponent implements OnInit{
 
 
     newSkillForm: FormGroup;

@@ -10,12 +10,14 @@ import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { VMessageModule } from "src/app/shared/components/vmessage/vmessage.module";
+import { StatisticsComponent } from "./statistics/statistics.component";
 
 @NgModule({ 
     declarations: [
         UserListComponent,
         DataComponent,
-        ProfileComponent
+        ProfileComponent,
+        StatisticsComponent
     ],
     imports: [
         HttpClientModule,

@@ -7,14 +7,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { VMessageModule } from '../shared/components/vmessage/vmessage.module';
 
 
-import { SkillsListComponent } from './skills-list/skills-list.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 
 
 
 @NgModule({
     declarations: [ 
-        SkillsListComponent,
         ProfileUserComponent
     ],
     imports: [ 

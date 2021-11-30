@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditProfileFormModule } from './users/edit-profile-form/edit-profile-form.module';
 import { SkillsFormModule } from './users/skills-form/skills-form.module';
 import { AllUsersListModule } from './users/all-users-list/all-users.list.module';
+import { SkillsListModule } from './users/skills-list/skills-list.module';
 
 @NgModule({
   declarations: [
@@ -32,15 +33,19 @@ import { AllUsersListModule } from './users/all-users-list/all-users.list.module
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
-    ModalModule.forRoot(),
-    CoreModule,
-    EditProfileFormModule,
+    
     ErrorsModule,
     UsersModule,
+    CoreModule,
+
+    EditProfileFormModule,
     UserListModule,
     SkillsFormModule,
     AllUsersListModule,
-    UserModule
+    UserModule,
+    SkillsListModule,
+
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

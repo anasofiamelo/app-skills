@@ -1,0 +1,13 @@
+.d-block {
+    width: 100px;
+    height: 100px;
+}
+.first {
+    background: blue;
+}
+.second {
+    background: red;
+}
+.third {
+    background: green;
+}

@@ -1,6 +1,5 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { delay, tap } from "rxjs/operators";
 
 import { Data } from "./data";
 
@@ -22,5 +21,4 @@ export class DataService {
     deleteDataFromUser(id_action: number){
         return this.http.delete<Data[]>(API + '/' + id_action)
     }
-
 }

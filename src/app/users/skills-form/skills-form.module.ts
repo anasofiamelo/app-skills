@@ -12,7 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { CommonModule } from "@angular/common";
 import { VMessageModule } from "src/app/shared/components/vmessage/vmessage.module";
 import { SkillsModule } from "../skills/skills.module";
-import { ModalModule } from "src/app/shared/components/modal/modal.module";
+import { ModalsModule } from "src/app/shared/components/modals/modals.module";
 
 
 @NgModule({ 
@@ -28,7 +28,7 @@ import { ModalModule } from "src/app/shared/components/modal/modal.module";
         VMessageModule,
         RouterModule,
         SkillsModule,
-        ModalModule
+        ModalsModule
     ],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

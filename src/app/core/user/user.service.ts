@@ -10,13 +10,14 @@ import { DeclareFunctionStmt } from "@angular/compiler";
 import { NewUser } from "src/app/home/signup/newuser";
 import { Data } from "src/app/users/user-list/data/data";
 import { FormGroup } from "@angular/forms";
+import { tap } from "rxjs/operators";
 
 const API = 'http://localhost:3000'
 
 @Injectable({ providedIn: 'root'})
 
 export class UserService {
-    private userSubject = new BehaviorSubject<User>(null)
+    public userSubject = new BehaviorSubject<User>(null)
     private userName: string
 
     constructor(
@@ -50,6 +51,9 @@ export class UserService {
     }
     upload(user: string, newUser: User){
         return this.http.put<any>(`${API}/user/${user}`, newUser)
+            .pipe(tap(() => {
+                this.userSubject.next({...this.userSubject.value, ...newUser})
+            }))
     }
     listHabilidades(){
         return this.http.get<Skills[]>(`${API}/habilidades`)

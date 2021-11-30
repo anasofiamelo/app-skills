@@ -25,7 +25,8 @@ export class UserListComponent implements OnInit {
   constructor(
     userService: UserService,
     private dataService: DataService,
-    private router: Router) {
+    private router: Router
+    ) {
         this.user$ = userService.getUser()
         this.user$.subscribe(user => {
         this.user = user})

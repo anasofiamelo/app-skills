@@ -1,9 +1,6 @@
 
 .skill {
-    width: 12rem;
-    height: 15rem;
-    background: fff;
-    border-radius: 25px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

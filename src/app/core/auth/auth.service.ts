@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { User } from 'src/app/users/user/user';
 import { UserService } from '../user/user.service';
 
 const API = 'http://localhost:3000'
@@ -12,9 +14,7 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private userService: UserService,) {
-    
-  }
+    private userService: UserService,) {}
 
   authenticate(user: string, password: string){
       return this.http.post(`${API}/login`, 
@@ -26,4 +26,5 @@ export class AuthService {
         console.log(`User ${user} autenticado com o token ${authToken}`)
       }))
   }
+
 }

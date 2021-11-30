@@ -19,7 +19,7 @@ export class EditProfileFormComponent implements OnInit {
 
   editForm: FormGroup;
   file: File;
-  user$: Observable<User>
+  // user$: Observable<User>
   user: User
   preview: string;
 
@@ -29,9 +29,11 @@ export class EditProfileFormComponent implements OnInit {
       private router: Router,
       private authService: AuthService
       ){
-        this.user$ = userService.getUser()
-        this.user$.subscribe(user => {
-        this.user = user})
+        // this.user = userService.getUser()
+        this.userService.userSubject
+          .subscribe(user => {
+            this.user = user
+          })
       }
 
     ngOnInit(){
@@ -47,14 +49,13 @@ export class EditProfileFormComponent implements OnInit {
     }
 
     upload(){
-        const user = this.editForm.get('user').value ;
-        const password = this.editForm.get('password').value ;
+        const user = this.editForm.get('user').value;
+        const password = this.editForm.get('password').value;
         const newUser = this.editForm.getRawValue() as User;
 
           this.userService.upload(this.user.user, newUser)
           .subscribe((res) => {
             alert('Conta alterada com sucesso!')
-            window.location.reload()
             this.router.navigateByUrl('/' + user)
           })
             
