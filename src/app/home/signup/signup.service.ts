@@ -1,19 +1,17 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { NewUser } from "./newuser";
+import API from "../../API.js";
 
-const API = 'http://localhost:3000'
-
-@Injectable({ providedIn: 'root'})
-
+@Injectable({ providedIn: "root" })
 export class SignUpService {
-    constructor(private http: HttpClient){}
+  constructor(private http: HttpClient) {}
 
-    checkUserTaken(user){
-        return this.http.get(API + '/user/exists/' + user)
-    }
+  checkUserTaken(user) {
+    return this.http.get(`${API.url}/user/exists/${user}`);
+  }
 
-    signup(newUser: NewUser) {
-        return this.http.post(API + '/create-user/', newUser)
-    }
-} 
+  signup(newUser: NewUser) {
+    return this.http.post(`${API.url}/create-user/`, newUser);
+  }
+}
