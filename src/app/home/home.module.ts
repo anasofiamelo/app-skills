@@ -1,4 +1,5 @@
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
@@ -10,21 +11,15 @@ import { SignInComponent } from "./signin/signin.component";
 import { SignUpComponent } from "./signup/signup.component";
 
 @NgModule({
-    declarations: [
-        SignInComponent,
-        SignUpComponent,
-        HomeComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        VMessageModule,
-        RouterModule,
-        HomeRoutingModule
-    ]
+  declarations: [SignInComponent, SignUpComponent, HomeComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    VMessageModule,
+    RouterModule,
+    HomeRoutingModule,
+    HttpClientModule,
+  ],
 })
-
-export class HomeModule {
-
-}
+export class HomeModule {}
