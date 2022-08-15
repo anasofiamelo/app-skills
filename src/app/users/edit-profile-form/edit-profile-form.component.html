@@ -1,70 +1,70 @@
 <div class="form-container">
-    <h1> EDIT PROFILE </h1>
-    <form [formGroup]="editForm" (submit)="upload()">
-      
-      <div *ngIf="!preview; else previewImage">
-
+  <h1>EDIT PROFILE</h1>
+  <form [formGroup]="editForm" (submit)="upload()">
+    <div *ngIf="!preview; else previewImage">
       <button type="button" (click)="fileInput.click()" class="btn btn-pic">
         <i class="fa fa-image fa-4x align-middle"></i>
       </button>
 
-        <input
-          #fileInput
-          hidden
-          formControlName="profilePic" 
-          type="file" 
-          accept="image/*"
-          (change)="handleFile($event.target.files[0])">
-            
-        <p> Edit profile pic </p>
+      <input
+        #fileInput
+        hidden
+        formControlName="profilePic"
+        type="file"
+        accept="image/*"
+        (change)="handleFile($event.target.files[0])"
+      />
 
-      <ng-template #previewImage>
-        <div class="text-center">
-          <img [src]="preview">
-        </div>
-      </ng-template>
+      <p>Edit profile pic</p>
+    </div>
 
-      </div>
+    <div class="form-group">
+      <input
+        class="input"
+        formControlName="nome"
+        type="text"
+        placeholder="Edit your name"
+      />
+    </div>
 
-      <div class="form-group">
-        <input
-          class="input"
-          formControlName="nome" 
-          type="text" 
-          placeholder="Edit your name">
-      </div>
+    <div class="form-group">
+      <input
+        class="input"
+        formControlName="email"
+        type="text"
+        placeholder="Edit your email"
+      />
+    </div>
 
-      <div class="form-group">
-        <input
-          class="input"
-          formControlName="email" 
-          type="text" 
-          placeholder="Edit your email"> 
-      </div>
-      
-      <div class="form-group">
-        <textarea
-          class="input"
-          formControlName="profileDesc" 
-          type="text" 
-          placeholder="Edit your description"> </textarea>
-      </div>
+    <div class="form-group">
+      <textarea
+        class="input"
+        formControlName="profileDesc"
+        type="text"
+        placeholder="Edit your description"
+      >
+      </textarea>
+    </div>
 
-      <div class="form-group">
-        <input
-          class="input"
-          formControlName="password" 
-          type="password" 
-          placeholder="Password">
-          <small class="text-center"> Necessary to edit </small>
-      </div>
-  
-        <div class="btn-container">
+    <div class="form-group">
+      <input
+        class="input"
+        formControlName="password"
+        type="password"
+        placeholder="Password"
+      />
+      <small class="text-center"> Necessary to edit </small>
+    </div>
 
-            <button type="submit" class="btn"> Upload </button>
-            <a class="btn" [routerLink]="['']">Cancel</a>
+    <div class="btn-container">
+      <button type="submit" class="btn">Upload</button>
+      <a class="btn" [routerLink]="['']">Cancel</a>
+    </div>
+  </form>
+</div>
 
-        </div>
-
-    </form>
+<ng-template #previewImage>
+  <div class="text-center">
+    <img [src]="preview" />
   </div>
+</ng-template>
